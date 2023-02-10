@@ -1,0 +1,40 @@
+a.
+
+R(A, B, C, D, E)
+    Because the closure of B is {BD} this violates BCNF as B, D is not a superkey. Thus we split into the following:
+R1(A, B, C, E), R2(B, D)
+    Because the closure of CE (within R1) is {ACE}, this also violates BCNF, as ACE is not a superkey. Thus, we split R1:
+R1.1(B, C, E), R1.2(A, C, E), R2(B, D)
+    Because all three subtables satisfy BCNF, this is the final decomposition of R.
+
+
+b.
+
+S(A, B, C, D, E)
+    Because the closure of A is AE, this violates BCNF as AE is not a superkey. Thus we split into the following:
+S1(A, B, C, D), S2(A, E)
+    Because the closure of BC (in S1) is BCA, this violates BCNF as BCA is not a superkey. Thus, we split S1:
+S1.1(B, C, D), S1.2(B, C, A), S2(A, E)
+    Because all three subtables satisfy BCNF, this is the final decomposition of S.
+
+c.
+
+A -> A
+B -> B 
+C -> C 
+D -> D 
+
+
+d. 
+
+A -> ABCD
+B -> ABCD
+C -> ABCD 
+D -> ABCD
+
+e. 
+
+A -> ABCD 
+B -> BC 
+C -> BC 
+D -> ABCD 
